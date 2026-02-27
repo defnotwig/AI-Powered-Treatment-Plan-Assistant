@@ -1,0 +1,308 @@
+{
+  "generatedAt": "2026-02-27T01:37:28.419Z",
+  "baseUrl": "http://localhost:5001",
+  "nodeVersion": "v22.14.0",
+  "phases": [
+    {
+      "name": "warmup",
+      "description": "Prime route handlers and in-memory caches",
+      "totalRequests": 150,
+      "concurrency": 15,
+      "durationMs": 3626,
+      "throughputRps": 41.37,
+      "successCount": 150,
+      "errorCount": 0,
+      "errorRate": 0,
+      "statusCodes": {
+        "200": 150
+      },
+      "cache": {
+        "hits": 72,
+        "misses": 3,
+        "hitRate": 96
+      },
+      "latencyMs": {
+        "min": 132.77,
+        "avg": 349.37,
+        "p50": 344.69,
+        "p95": 554.55,
+        "p99": 635.31,
+        "max": 653.45
+      },
+      "scenarioBreakdown": [
+        {
+          "name": "health",
+          "requests": 25,
+          "errorRate": 0,
+          "avgLatencyMs": 346.05,
+          "p95LatencyMs": 519.34
+        },
+        {
+          "name": "analytics",
+          "requests": 25,
+          "errorRate": 0,
+          "avgLatencyMs": 364.98,
+          "p95LatencyMs": 557.7
+        },
+        {
+          "name": "patient-stats",
+          "requests": 25,
+          "errorRate": 0,
+          "avgLatencyMs": 357.56,
+          "p95LatencyMs": 554.55
+        },
+        {
+          "name": "drug-stats",
+          "requests": 25,
+          "errorRate": 0,
+          "avgLatencyMs": 347.21,
+          "p95LatencyMs": 491.73
+        },
+        {
+          "name": "ml-stats",
+          "requests": 25,
+          "errorRate": 0,
+          "avgLatencyMs": 340.57,
+          "p95LatencyMs": 483.08
+        },
+        {
+          "name": "realtime-sources",
+          "requests": 25,
+          "errorRate": 0,
+          "avgLatencyMs": 339.87,
+          "p95LatencyMs": 486.92
+        }
+      ]
+    },
+    {
+      "name": "cached-read-saturation",
+      "description": "High-concurrency cached reads across analytics and knowledge endpoints",
+      "totalRequests": 3200,
+      "concurrency": 120,
+      "durationMs": 30400.44,
+      "throughputRps": 105.26,
+      "successCount": 3067,
+      "errorCount": 133,
+      "errorRate": 4.16,
+      "statusCodes": {
+        "0": 133,
+        "200": 3067
+      },
+      "cache": {
+        "hits": 2657,
+        "misses": 10,
+        "hitRate": 99.63
+      },
+      "latencyMs": {
+        "min": 0.99,
+        "avg": 912.91,
+        "p50": 32.45,
+        "p95": 3552.62,
+        "p99": 15011.65,
+        "max": 15027.1
+      },
+      "scenarioBreakdown": [
+        {
+          "name": "analytics",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 310.55,
+          "p95LatencyMs": 2414.25
+        },
+        {
+          "name": "patient-stats",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 312.27,
+          "p95LatencyMs": 2551.94
+        },
+        {
+          "name": "all-patients",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 324.5,
+          "p95LatencyMs": 2630.39
+        },
+        {
+          "name": "drug-interactions",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 318.16,
+          "p95LatencyMs": 2584.65
+        },
+        {
+          "name": "contraindications",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 330.75,
+          "p95LatencyMs": 2630.04
+        },
+        {
+          "name": "dosage-guidelines",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 337.47,
+          "p95LatencyMs": 2674.22
+        },
+        {
+          "name": "ml-stats",
+          "requests": 400,
+          "errorRate": 0,
+          "avgLatencyMs": 313.19,
+          "p95LatencyMs": 2540.93
+        },
+        {
+          "name": "drug-lookup-aspirin",
+          "requests": 400,
+          "errorRate": 33.25,
+          "avgLatencyMs": 5056.38,
+          "p95LatencyMs": 15013.26
+        }
+      ]
+    },
+    {
+      "name": "mixed-write-read",
+      "description": "Concurrent writes plus reads to validate responsiveness under mutation load",
+      "totalRequests": 900,
+      "concurrency": 45,
+      "durationMs": 75752.1,
+      "throughputRps": 11.88,
+      "successCount": 699,
+      "errorCount": 201,
+      "errorRate": 22.33,
+      "statusCodes": {
+        "0": 201,
+        "200": 699
+      },
+      "cache": {
+        "hits": 508,
+        "misses": 11,
+        "hitRate": 97.88
+      },
+      "latencyMs": {
+        "min": 1.27,
+        "avg": 3393.56,
+        "p50": 40.29,
+        "p95": 15017,
+        "p99": 15048.27,
+        "max": 15070.62
+      },
+      "scenarioBreakdown": [
+        {
+          "name": "analytics",
+          "requests": 180,
+          "errorRate": 0,
+          "avgLatencyMs": 41.21,
+          "p95LatencyMs": 129.25
+        },
+        {
+          "name": "ml-training-data",
+          "requests": 180,
+          "errorRate": 0,
+          "avgLatencyMs": 42.34,
+          "p95LatencyMs": 129.46
+        },
+        {
+          "name": "all-patients",
+          "requests": 180,
+          "errorRate": 0,
+          "avgLatencyMs": 48.5,
+          "p95LatencyMs": 137.79
+        },
+        {
+          "name": "drug-lookup-metformin",
+          "requests": 180,
+          "errorRate": 11.67,
+          "avgLatencyMs": 1823.48,
+          "p95LatencyMs": 15020.64
+        },
+        {
+          "name": "analyze-new-patient",
+          "requests": 180,
+          "errorRate": 100,
+          "avgLatencyMs": 15012.27,
+          "p95LatencyMs": 15047.27
+        }
+      ]
+    },
+    {
+      "name": "lookup-and-realtime-blast",
+      "description": "Burst test external-data lookups and realtime source endpoints",
+      "totalRequests": 1700,
+      "concurrency": 85,
+      "durationMs": 90770.24,
+      "throughputRps": 18.73,
+      "successCount": 1204,
+      "errorCount": 496,
+      "errorRate": 29.18,
+      "statusCodes": {
+        "0": 496,
+        "200": 1204
+      },
+      "cache": {
+        "hits": 632,
+        "misses": 6,
+        "hitRate": 99.06
+      },
+      "latencyMs": {
+        "min": 0.94,
+        "avg": 4400.01,
+        "p50": 25.22,
+        "p95": 15030.24,
+        "p99": 15060.07,
+        "max": 15113.24
+      },
+      "scenarioBreakdown": [
+        {
+          "name": "drug-lookup-lisinopril",
+          "requests": 284,
+          "errorRate": 29.93,
+          "avgLatencyMs": 4512.82,
+          "p95LatencyMs": 15038.54
+        },
+        {
+          "name": "drug-lookup-atorvastatin",
+          "requests": 284,
+          "errorRate": 45.07,
+          "avgLatencyMs": 6774.72,
+          "p95LatencyMs": 15040.51
+        },
+        {
+          "name": "ml-stats",
+          "requests": 283,
+          "errorRate": 0,
+          "avgLatencyMs": 30.09,
+          "p95LatencyMs": 104.23
+        },
+        {
+          "name": "patient-search",
+          "requests": 283,
+          "errorRate": 0,
+          "avgLatencyMs": 32.19,
+          "p95LatencyMs": 104.65
+        },
+        {
+          "name": "realtime-sources",
+          "requests": 283,
+          "errorRate": 0,
+          "avgLatencyMs": 31.03,
+          "p95LatencyMs": 104.31
+        },
+        {
+          "name": "drug-lookup-warfarin",
+          "requests": 283,
+          "errorRate": 100,
+          "avgLatencyMs": 15010.43,
+          "p95LatencyMs": 15041.29
+        }
+      ]
+    }
+  ],
+  "overall": {
+    "totalRequests": 5950,
+    "totalErrors": 830,
+    "errorRate": 13.95,
+    "avgThroughputRps": 44.31,
+    "overallP95LatencyMs": 8538.6
+  }
+}
