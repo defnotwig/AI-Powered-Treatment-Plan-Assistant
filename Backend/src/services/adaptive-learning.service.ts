@@ -1,8 +1,10 @@
+export type RiskCategory = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+
 export interface AdaptiveTrainingSample {
   id: string;
   inputs: number[];
   output: number;
-  category: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+  category: RiskCategory;
   source: string;
   timestamp: string;
   patientId?: string;
@@ -10,7 +12,7 @@ export interface AdaptiveTrainingSample {
 
 export interface AdaptiveLearningStats {
   sampleCount: number;
-  byCategory: Record<'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL', number>;
+  byCategory: Record<RiskCategory, number>;
   latestTimestamp: string | null;
 }
 
@@ -38,7 +40,7 @@ interface IngestFromPatientPayload {
   };
 }
 
-function toCategory(score: number): 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL' {
+function toCategory(score: number): RiskCategory {
   if (score >= 80) return 'CRITICAL';
   if (score >= 60) return 'HIGH';
   if (score >= 30) return 'MEDIUM';
@@ -49,18 +51,16 @@ function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
 
-function computeSmokingScore(status?: string, years?: number): number {
-  const safeYears = years || 0;
-  if (status === 'current') return clamp(50 + safeYears, 0, 100);
-  if (status === 'former') return clamp(safeYears * 0.5, 0, 50);
+function computeSmokingScore(status?: string, years = 0): number {
+  if (status === 'current') return clamp(50 + years, 0, 100);
+  if (status === 'former') return clamp(years * 0.5, 0, 50);
   return 0;
 }
 
-function computeAlcoholScore(frequency?: string, drinksPerWeek?: number): number {
-  const drinks = drinksPerWeek || 0;
-  if (frequency === 'heavy') return clamp(60 + drinks, 0, 100);
-  if (frequency === 'moderate') return clamp(20 + drinks, 0, 60);
-  if (frequency === 'occasional') return clamp(drinks * 2, 0, 30);
+function computeAlcoholScore(frequency?: string, drinksPerWeek = 0): number {
+  if (frequency === 'heavy') return clamp(60 + drinksPerWeek, 0, 100);
+  if (frequency === 'moderate') return clamp(20 + drinksPerWeek, 0, 60);
+  if (frequency === 'occasional') return clamp(drinksPerWeek * 2, 0, 30);
   return 0;
 }
 
@@ -152,7 +152,7 @@ class AdaptiveLearningService {
   }
 
   getStats(): AdaptiveLearningStats {
-    const byCategory: Record<'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL', number> = {
+    const byCategory: Record<RiskCategory, number> = {
       LOW: 0,
       MEDIUM: 0,
       HIGH: 0,
@@ -166,7 +166,7 @@ class AdaptiveLearningService {
     return {
       sampleCount: this.samples.length,
       byCategory,
-      latestTimestamp: this.samples.length > 0 ? this.samples[this.samples.length - 1].timestamp : null,
+      latestTimestamp: this.samples.length > 0 ? this.samples.at(-1)!.timestamp : null,
     };
   }
 }

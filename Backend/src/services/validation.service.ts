@@ -146,9 +146,7 @@ export const validatePatientData = (data: unknown): ValidationResult => {
   const patientData = data as Record<string, unknown>;
   
   // Validate demographics
-  if (!patientData.demographics) {
-    errors.push({ field: 'demographics', message: 'Demographics data is required' });
-  } else {
+  if (patientData.demographics) {
     const demo = patientData.demographics as Record<string, unknown>;
     if (typeof demo.age !== 'number' || demo.age < 0 || demo.age > 150) {
       errors.push({ field: 'demographics.age', message: 'Valid age is required (0-150)' });
@@ -159,6 +157,8 @@ export const validatePatientData = (data: unknown): ValidationResult => {
     if (typeof demo.height !== 'number' || demo.height <= 0) {
       errors.push({ field: 'demographics.height', message: 'Valid height is required' });
     }
+  } else {
+    errors.push({ field: 'demographics', message: 'Demographics data is required' });
   }
   
   // Validate medical history
@@ -167,13 +167,13 @@ export const validatePatientData = (data: unknown): ValidationResult => {
   }
   
   // Validate lifestyle
-  if (!patientData.lifestyle) {
-    errors.push({ field: 'lifestyle', message: 'Lifestyle factors are required' });
-  } else {
+  if (patientData.lifestyle) {
     const lifestyle = patientData.lifestyle as Record<string, unknown>;
     if (!lifestyle.chiefComplaint) {
       errors.push({ field: 'lifestyle.chiefComplaint', message: 'Chief complaint is required' });
     }
+  } else {
+    errors.push({ field: 'lifestyle', message: 'Lifestyle factors are required' });
   }
   
   return {

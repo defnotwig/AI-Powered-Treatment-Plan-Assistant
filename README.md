@@ -277,7 +277,7 @@ npm run dev
 
 ```bash
 # Seed drug interaction database
-npm run db:seed
+npm run db:seedx`
 
 # Seed 1000+ demo patients (demo mode)
 # This happens automatically on server start if DEMO_MODE=true

@@ -5,7 +5,7 @@
  * Exits 0 if the /api/health endpoint responds OK, 1 otherwise.
  */
 
-const http = require('http');
+const http = require('node:http');
 
 const PORT = process.env.PORT || 5000;
 
