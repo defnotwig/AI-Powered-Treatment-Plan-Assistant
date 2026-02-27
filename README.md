@@ -1,10 +1,14 @@
 # 🏥 AI-Powered Treatment Plan Assistant
 
+[![CI](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen)](https://github.com)
 [![OpenAI GPT-4o](https://img.shields.io/badge/AI-GPT--4o-blue)](https://openai.com)
 [![TensorFlow.js](https://img.shields.io/badge/ML-TensorFlow.js-orange)](https://tensorflow.org)
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)](https://postgresql.org)
 [![React 18](https://img.shields.io/badge/Frontend-React%2018-cyan)](https://react.dev)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](docker-compose.yml)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
 
 An advanced clinical decision support system that transforms patient intake data into **personalized, safety-checked treatment plans**. This AI-powered assistant helps doctors make faster, data-driven decisions while **aggressively flagging drug interactions, contraindications, and risk factors**.
 
