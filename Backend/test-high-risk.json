@@ -1,0 +1,39 @@
+{
+  "demographics": {
+    "age": 72,
+    "weight": 75,
+    "height": 170,
+    "bmi": 25.95,
+    "bloodPressure": { "systolic": 150, "diastolic": 90 },
+    "heartRate": 78,
+    "temperature": 98.6
+  },
+  "medicalHistory": {
+    "conditions": [
+      { "condition": "Coronary Artery Disease", "severity": "moderate", "controlled": true },
+      { "condition": "Hypertension", "severity": "moderate", "controlled": true },
+      { "condition": "Type 2 Diabetes", "severity": "mild", "controlled": true }
+    ],
+    "allergies": [
+      { "allergen": "Penicillin", "reaction": "Rash", "severity": "moderate" }
+    ],
+    "surgeries": [],
+    "pastSurgeries": [],
+    "familyHistory": ["Heart Disease"]
+  },
+  "currentMedications": {
+    "medications": [
+      { "drugName": "Nitroglycerin", "dosage": "0.4mg", "frequency": "as needed", "route": "sublingual" },
+      { "drugName": "Aspirin", "dosage": "81mg", "frequency": "daily", "route": "oral" },
+      { "drugName": "Metformin", "dosage": "500mg", "frequency": "twice daily", "route": "oral" },
+      { "drugName": "Lisinopril", "dosage": "10mg", "frequency": "daily", "route": "oral" }
+    ]
+  },
+  "lifestyleFactors": {
+    "chiefComplaint": "Erectile dysfunction",
+    "smokingStatus": "former",
+    "alcoholUse": "occasional",
+    "exerciseLevel": "light",
+    "dietType": "standard"
+  }
+}
