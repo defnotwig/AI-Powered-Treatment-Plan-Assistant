@@ -1,14 +1,48 @@
 # 🏥 AI-Powered Treatment Plan Assistant
 
+<!-- GitHub Shields (Dynamic) -->
 [![CI](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen)](https://github.com)
-[![OpenAI GPT-4o](https://img.shields.io/badge/AI-GPT--4o-blue)](https://openai.com)
-[![TensorFlow.js](https://img.shields.io/badge/ML-TensorFlow.js-orange)](https://tensorflow.org)
-[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)](https://postgresql.org)
-[![React 18](https://img.shields.io/badge/Frontend-React%2018-cyan)](https://react.dev)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](docker-compose.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![License: MIT](https://img.shields.io/github/license/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&color=yellow)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=github&label=Stars)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=github&label=Forks)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=github&label=Issues)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=github&label=PRs)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/pulls)
+[![Last Commit](https://img.shields.io/github/last-commit/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=git&logoColor=white&label=Last%20Commit)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/commits/master)
+[![Repo Size](https://img.shields.io/github/repo-size/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=github&label=Repo%20Size)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant)
+[![GitHub Contributors](https://img.shields.io/github/contributors/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&logo=github&label=Contributors)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/graphs/contributors)
+
+<!-- Tech Stack Badges -->
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![React 18](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Express.js](https://img.shields.io/badge/Express-4.x-000000?style=flat-square&logo=express&logoColor=white)](https://expressjs.com)
+[![Node.js](https://img.shields.io/badge/Node.js-22-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+
+<!-- AI & ML Badges -->
+[![OpenAI GPT-4o](https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=flat-square&logo=openai&logoColor=white)](https://openai.com)
+[![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js-ML-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)](https://tensorflow.org)
+
+<!-- Database & Infrastructure -->
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://postgresql.org)
+[![Sequelize](https://img.shields.io/badge/Sequelize-ORM-52B0E7?style=flat-square&logo=sequelize&logoColor=white)](https://sequelize.org)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](docker-compose.yml)
+
+<!-- Testing & Quality -->
+[![Vitest](https://img.shields.io/badge/Vitest-224%20tests-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev)
+[![Jest](https://img.shields.io/badge/Jest-3%20tests-C21325?style=flat-square&logo=jest&logoColor=white)](https://jestjs.io)
+[![ESLint](https://img.shields.io/badge/ESLint-0%20errors-4B32C3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org)
+[![SonarQube](https://img.shields.io/badge/SonarQube-0%20issues-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white)](https://sonarqube.org)
+
+<!-- Security & Compliance -->
+[![Security](https://img.shields.io/badge/Security-HIPAA%20Audit%20Logging-red?style=flat-square&logo=shieldsdotio&logoColor=white)](#-safety-features)
+[![CVE](https://img.shields.io/badge/Docker%20CVEs-0-brightgreen?style=flat-square&logo=docker&logoColor=white)](#-architecture)
+[![API](https://img.shields.io/badge/API-v1%20(Versioned)-blue?style=flat-square&logo=openapiinitiative&logoColor=white)](#-api-documentation)
+
+<!-- Status -->
+[![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square&logo=github)](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant/pulls)
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)](https://github.com/defnotwig)
 
 An advanced clinical decision support system that transforms patient intake data into **personalized, safety-checked treatment plans**. This AI-powered assistant helps doctors make faster, data-driven decisions while **aggressively flagging drug interactions, contraindications, and risk factors**.
 
